@@ -16,11 +16,13 @@ const divide = (a, b) => {
 }
 
 // Variables declaration
-const firstNumber = 0;
+let firstNumber = 0;
 
-const operator = '';
+let operator = '';
 
-const lastNumber = 0;
+let lastNumber = 0;
+
+let displayValue = '';
 
 // Operate function
 const operate = (firstNumber, operator, lastNumber) => {
@@ -39,3 +41,26 @@ const operate = (firstNumber, operator, lastNumber) => {
             break;
     }
 };
+
+// Display functionalities
+const display = document.getElementById('display');
+display.textContent = "0";
+
+// Buttons functionalities
+/// Digits
+const btnDigits = document.querySelectorAll('.digit');
+
+btnDigits.forEach(btnDigit => {
+    btnDigit.addEventListener('click', () => {
+        displayValue = displayValue.concat(btnDigit.textContent);
+        display.textContent = displayValue;
+    })
+});
+
+/// Clear Button
+const clear = document.getElementById('clear');
+
+clear.addEventListener('click', () => {
+    displayValue = '';
+    display.textContent = '0';
+})
