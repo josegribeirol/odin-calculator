@@ -5,3 +5,12 @@ body {
 .digit {
     border: 2px solid;
 }
+
+#main {
+    display: flex;
+    justify-content: center;
+}
+
+#calcBkg {
+    background-color: gray;
+}

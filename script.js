@@ -63,4 +63,23 @@ const clear = document.getElementById('clear');
 clear.addEventListener('click', () => {
     displayValue = '';
     display.textContent = '0';
-})
+});
+
+/// Operator Buttons
+const btnOperators = document.querySelectorAll('.operator');
+
+btnOperators.forEach(btnOperator => {
+    btnOperator.addEventListener('click', () => {
+        operator = btnOperator.id;
+        firstNumber = displayValue;
+        display.textContent = btnOperator.id;
+        displayValue = '';
+    });
+});
+
+/// Equal Button
+const equal = document.getElementById('equal');
+
+equal.addEventListener('click', () => {
+    display.textContent = operate(parseInt(firstNumber), operator, parseInt(displayValue))
+});
